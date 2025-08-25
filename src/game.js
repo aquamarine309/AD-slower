@@ -324,7 +324,7 @@ export function getGameSpeedupFactor(effectsToConsider, blackHolesActiveOverride
     }
   }
 
-  let factor = 1;
+  let factor = 1e5;
   if (effects.includes(GAME_SPEED_EFFECT.BLACK_HOLE)) {
     if (BlackHoles.areNegative) {
       factor *= player.blackHoleNegative;

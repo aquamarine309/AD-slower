@@ -79,5 +79,11 @@
     childList: true,
     subtree: true
   });
+  
+  setInterval(function() {
+    if (!Function.prototype.toString.call(setInterval).includes("[native code]")) {
+      location.reload();
+    }
+  }, 10000);
 </script>
 </html>
