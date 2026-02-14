@@ -14,10 +14,6 @@ class DimBoostRequirement {
 
 export class DimBoost {
   static get power() {
-    if (NormalChallenge(8).isRunning) {
-      return DC.D1;
-    }
-
     let boost = Effects.max(
       2,
       InfinityUpgrade.dimboostMult,
@@ -54,7 +50,7 @@ export class DimBoost {
   }
 
   static get maxBoosts() {
-    if (Ra.isRunning) {
+    if (Ra.isRunning || NormalChallenge(8).isRunning) {
       // Ra makes boosting impossible. Note that this function isn't called
       // when giving initial boosts, so the player will still get those.
       return 0;
